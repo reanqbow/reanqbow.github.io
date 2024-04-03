@@ -4,15 +4,170 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
-    <title>Example Student's HCDE 439 Physical Computing Page!</title>
+    <title>Yubo Zhao's Project Site Assignment 1</title>
 
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Example Student's Assignment 1!</h1>
-    <div class="header">
-      <img src="red-panda.jpg" />
-      <p>Here is all the documentation for assignment 1!</p>
-    </div>
+    <!-- main section -->
+    <div class="profile-card">
+      <div class="header">
+        <div class="section">
+          <div class="back-text">
+            <a class="see-more" href="index.html">Back to home<br/></a>
+          </div>
+          <div class="header-text">
+              <div class="name">Assignment 1</div>
+              <div class="pronouns">Laser-cutting</div>
+          </div>
+        </div>
+          
+      </div class="section-wrapper">
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Design</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">I started this assignment by thinking something really simple but also flexible and modular. As a basic floral panel, it can be slotted into a connector that allows modularized construction.</span>
+          </div>
+          <div class="text-wrapper">
+            <span class="text">The geometry of the floral panel is determined by golden ratio. I set the diameter of the circle as 1 inch and duplicated it on the middle point of the sides of a square with 0.618-inch sides.</span>
+          </div>
+          <div class="text-wrapper">
+            <span class="text">For the connector, the outer rim was set to a quarter arc of 1-inch radius and the inner rim was set to the 0.618-inch position of the radius, giving the thickness of the connection as 0.382 inch. </span>
+          </div>
+          <figure>
+            <img class="content-img" src="a1\design 1.png">
+            <figcaption>The shape exploration of panels</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a1/design 2.png">
+            <figcaption>The shape exploration of connectors</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+      <!-- section component -->
+
+      <!-- section component -->
+      <div class="section">
+         <div class="section-header">Measure and test</div>
+        <div class="section-content">
+          <figure>
+            <img class="content-img" src="a1/caliper.jpg">
+            <figcaption>Measure the thickness of cardboard</figcaption>
+          </figure>
+          
+          <div class="text-wrapper">
+            <span class="text">I used a caliper to measure my cardboard and got <code>thickness: 0.10 in</code>. Then I decided to test the fit with three different slot width settings— <code>width: 0.09 in</code>, <code>width: 0.10 in</code>, and <code>width: 0.11 in</code>.</span>
+          </div>
+
+          <figure>
+            <img class="content-img" src="a1/test 1.jpg">
+            <figcaption>Testing different slot width</figcaption>
+          </figure>
+
+          <figure>
+            <img class="content-img" src="a1/test 2.jpg">
+            <figcaption>Different fits when connected</figcaption>
+          </figure>
+
+          <div class="text-wrapper">
+            <span class="text">The 0.11-in slot was too loose when connecting parts, and the 0.10 slot was slightly wobbly when connecting more than 3 parts, so I decided to go with <code>width: 0.09 in</code> for the safest connection.</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Iterate</div>
+       <div class="section-content">
+         <figure>
+           <img class="content-img" src="a1/problem 1.jpg">
+           <figcaption>Structure compromised with 10+ pieces</figcaption>
+         </figure>
+         
+         <div class="text-wrapper">
+           <span class="text">The biggest mistake I made was starting to build without testing more parts being connected. Currently the depth of the slot was set to 0.10 in,  and due to the shallow connection, the whole model started to fall apart after constructing 10+ pieces. Another issue was because of the tightness of the connection, it required huge pressure to assemble them which could cause broke and chipped piece due to the materiality of cardboard. I only noticed these problems after printing 30+ pieces…</span>
+         </div>
+
+         <figure>
+           <img class="content-img" src="a1/new 1.png">
+           <figcaption>Add more depth</figcaption>
+         </figure>
+         <figure>
+          <img class="content-img" src="a1/new 2.png">
+          <figcaption>Add chamfer</figcaption>
+        </figure>
+
+         <div class="text-wrapper">
+           <span class="text">I then iterated the design to set a deeper slot with <code>depth: 0.20 in</code> and create a <code>chamfer: 0.025 in</code> on the connectors. They both worked very well by adding structural stability and ease to assemble.</span>
+         </div>
+
+         <figure>
+          <img class="content-img" src="a1/fix 1.jpg">
+          <figcaption>Iterated pieces</figcaption>
+        </figure>
+         
+       </div>
+     </div>
+
+     <!-- section component -->
+     <div class="section">
+      <div class="section-header">Final model</div>
+     <div class="section-content">
+       <figure>
+         <img class="content-img" src="a1/final.jpg">
+         <figcaption>The final model of two connected sphere</figcaption>
+       </figure>
+       
+       <div class="text-wrapper">
+         <span class="text">I printed over 50+ pieces and assembled some of them as connected spheres.</span>
+       </div>
+
+       <figure>
+         <img class="content-img" src="a1/sample-02.png">
+         <figcaption>Single sphere</figcaption>
+       </figure>
+       <figure>
+        <img class="content-img" src="a1/exploded-01.png">
+        <figcaption>Construction guide</figcaption>
+      </figure>
+       </div>
+     </div>
+
+     <!-- section component -->
+     <div class="section">
+      <div class="section-header">Laser cutter settings</div>
+     <div class="section-content">
+       <figure>
+         <img class="content-img" src="a1/laser.jpg">
+         <figcaption>Cutting in progress...</figcaption>
+       </figure>
+       
+       <div class="text-wrapper">
+         <span class="text">I initially used the recommended settings from the class, but due to the thickness and a slight bend of my cardboard, some of the pieces were not cut through. So I decided to set a lower speed and it worked well.</span>
+       </div>
+
+       <div class="text-wrapper">
+        <span class="text">The finall laser cutter settings are:<code>speed: 20%</code>, <code>power: 100%</code>, and <code>freq.: 50%</code></span>
+      </div>
+
+       
+     </div>
+   </div>
+      <!-- section component -->
+        <div class="section">
+            <div class="section-header">Source file</div>
+            <div class="section-content">
+              <div class="text-wrapper">
+                <a class="see-more" href="a1\Assignment 1 source file.zip">Download↓<br/></a>
+              </div>
+            </div>
+        </div>
+  </div>
   </body>
 </html>
+
