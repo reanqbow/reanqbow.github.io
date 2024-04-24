@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Yubo Zhao's Project Site Assignment 4</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- main section -->
+    <div class="profile-card">
+      <div class="header">
+        <div class="section">
+          <div class="back-text">
+            <a class="see-more" href="index.html">Back to home<br/></a>
+          </div>
+          <div class="header-text">
+              <div class="name">Assignment 4</div>
+              <div class="pronouns">Milling</div>
+          </div>
+        </div>
+          
+      </div class="section-wrapper">
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Box design</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">First, I set a 20mm*20mm square as a basic geometry for the side of the box. Then I took the <code>thickness: 1.33mm</code> of the PCB board into account and subtracted the corresponding depth from the 2D shape of the sides.</span>
+          </div>
+          <div class="text-wrapper">
+            <span class="text">The sides are divided into 5 segments for tabs and slots with the width of 4mm for each segment.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="a4/dimension.png">
+            <figcaption>Dimensions of tabs and slots</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a4/views.png">
+            <figcaption>Upper left: left and right; Upper right: front and back; Bottom right: bottom</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a4/model.png">
+            <figcaption>Assembly model</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+      <!-- section component -->
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Tolerance</div>
+        <div class="section-content">
+            <div class="text-wrapper">
+                <span class="text">I started to test <code>tolerance: 0.1mm</code>, however it is way too loose. I then reduced it to <code>tolerance: 0.05mm</code>, but it’s still not close. Then I tried <code>tolerance: 0.03mm</code> and <code>tolerance: 0mm</code>. While the latter is too tight that requires to be hammered down, the former cannot pass the hanging test. Finally, with <code>tolerance: 0.02mm</code> the box was able to hold itself snuggly and without being hammered.</span>
+              </div>
+            <figure>
+                <img class="content-img" src="a4/tol.png">
+                <figcaption>Tolerance only applied on width (not on depth)</figcaption>
+            </figure>
+            <figure>
+                <img class="content-img" src="a4/tolerance01.jpg">
+                <figcaption>Tolerance: 0.1mm</figcaption>
+            </figure>
+            <figure>
+                <img class="content-img" src="a4/tolerance005.jpg">
+                <figcaption>Tolerance: 0.05mm</figcaption>
+            </figure>
+            <figure>
+                <img class="content-img" src="a4/tolerance003.jpg">
+                <figcaption>Tolerance: 0.03mm</figcaption>
+            </figure>
+        </div>
+      </div>
+      <!-- section component -->
+
+      <!-- section component -->
+      <div class="section">
+         <div class="section-header">Final assembly</div>
+        <div class="section-content">
+
+          <figure>
+            <img class="content-img" src="a4/model.jpg">
+            <figcaption>Final model</figcaption>
+          </figure>
+          
+
+          
+          
+        </div>
+      </div>
+
+        <div class="section">
+            <div class="section-header">Source file</div>
+            <div class="section-content">
+              <div class="text-wrapper">
+                <a class="see-more" href="a4/milling_file.zip">Download milling file↓<br/></a>
+              </div>
+            </div>
+        </div>
+  </div>
+  </body>
+</html>

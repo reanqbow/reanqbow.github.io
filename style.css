@@ -147,6 +147,8 @@ code {
   text-align: right;
   margin: 0;
   hyphens: auto;
+  position: sticky;
+  top: 16px;
 }
 
 .section-content {
