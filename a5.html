@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Yubo Zhao's Project Site Assignment 5</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- main section -->
+    <div class="profile-card">
+      <div class="header">
+        <div class="section">
+          <div class="back-text">
+            <a class="see-more" href="index.html">Back to home<br/></a>
+          </div>
+          <div class="header-text">
+              <div class="name">Assignment 5</div>
+              <div class="pronouns">Mesh and Lamp Part 1</div>
+          </div>
+        </div>
+          
+      </div class="section-wrapper">
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Mesh</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">For the mesh assignment, I meshed up a low-poly unicorn model and a screw which replaces the original horn. I used commands like <code>MeshBooleanDifference</code> and <code>MeshBooleanUnion</code> to clean the original horn and join two meshes, and finally I simplified the result by using <code>ReduceMesh</code>.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="a5/unicorn.png">
+            <figcaption>Original meshes</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a5/placement.png">
+            <figcaption>Meshing up!</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a5/unicornmodel.jpg">
+            <figcaption>Printed model</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+      <!-- section component -->
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Lamp design</div>
+        <div class="section-content">
+            <div class="text-wrapper">
+                <span class="text">My inspiration came from a lamp designed by New Craft House which takes the advantage of the thickness of extruded filament to create a weaving pattern. The single wall layer also allows structural flexibility and light penetration.</span>
+            </div>
+            <figure>
+                <img class="content-img" src="https://newcraftshop.com/cdn/shop/products/0001s_0001_IMG_0007_1_900x.jpg?v=1692642695">
+                <figcaption>Baobap Lamp by New Craft House</figcaption>
+            </figure>
+            <figure>
+                <img class="content-img" src="a5/printref.jpg">
+                <figcaption>Print details by New Craft House</figcaption>
+            </figure>
+            <div class="text-wrapper">
+                <span class="text">Then I started to create this pattern in Grasshopper. By dividing an original surface into grids, the points on the grid can be group in an alternating pattern by using <code>Cull Pattern</code> on the list. On one row, the points are offsetted to the original position by a distance in the same alternating pattern, which means that, for instance, points with odd number indexes move up and those with even number indexes move down. And for the next row, points with odd and even number indexes do the opposite by using <code>Flip Matrix</code> so they create this weaving effect with porosity.</span>
+            </div>
+            <figure>
+                <img class="content-img" src="a5/ghprogress.png">
+                <figcaption>Weave it in GH</figcaption>
+            </figure>
+            <figure>
+                <img class="content-img" src="a5/ghcode.png">
+                <figcaption>GH code</figcaption>
+            </figure>
+            <div class="text-wrapper">
+                <span class="text">But there is one problem, this code only works for a flat surface because the vector that moves the points up/down is set to <code>Unit Z</code>. So to make it work on a lampshade, I have two choices: 1) set the direction of movement to a centripetal/centrifugal vector, or 2) set it to a normal vector that is always perpendicular to the surface plane of the point. I decided to use first method because this approach is simple to implement for a geometry originated from a revolving curve as well as safe to be normal vector to the surface plane.</span>
+            </div>
+            <div class="text-wrapper">
+                <span class="text">I also tested different distances between weaving layers (not print layers). Currently with small print layer height, both zero distance and minus distance (which means each layer overlaps a little bit) work, but in the future tests on greater print layer heights, solution might change due to the changing numbers of printed layers.</span>
+            </div>
+            <figure>
+                <img class="content-img" src="a5/render.png">
+                <figcaption>The rendering of the pattern</figcaption>
+            </figure>
+        </div>
+      </div>
+      <!-- section component -->
+
+      <!-- section component -->
+      <div class="section">
+         <div class="section-header">Test prints</div>
+        <div class="section-content">
+            <div class="text-wrapper">
+                <span class="text">For this part of the assignment, I only tested a small layer height (0.28mm) and multiple print layers on one weaving layer due to a limitation on nozzle width (0.4mm). In the future I plan to test it with 0.8mm wide nozzle and try to achieve the weaving pattern by single extrusion of print layers.</span>
+            </div>
+            <div class="text-wrapper">
+                <span class="text">Initially I created the geometry by <code>Pipe</code> the weaving curves, which produces complicated spaghetti geometries with millions of mesh triangles. I then remodelled the geometry as a solid extrusion from weaving curves and printed it in Vase Mode. However, the print quality of two different methods has no difference.</span>
+            </div>
+
+          <figure>
+            <img class="content-img" src="a5/testprints.jpg">
+            <figcaption>Left: failed print without brim; middle: vase mode; right: regular mode</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a5/vaseandpipe.png">
+            <figcaption>Left: initial piped geometry; right: extruded geometry for vase mode</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a5/flexibility.jpg">
+            <figcaption>The test print is quite flexible!</figcaption>
+          </figure>
+          
+
+          
+          
+        </div>
+      </div>
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Lighting component</div>
+       <div class="section-content">
+           <div class="text-wrapper">
+               <span class="text">I want to test multiple shapes of the lampshade, from a mushroom shape to a narrow needle. So for the geometric versatility I decided to use a cylinder-shape bulb and a simple socket component to fit into various shapes. </span>
+           </div>
+
+         <figure>
+           <img class="content-img" src="a5/lighting.jpg">
+           <figcaption>Lighting components</figcaption>
+         </figure>
+         <figure>
+           <img class="content-img" src="a5/basewip.png">
+           <figcaption>Base design WIP</figcaption>
+         </figure>
+       </div>
+     </div>
+
+     <!-- section component -->
+     <div class="section">
+        <div class="section-header">Next steps</div>
+       <div class="section-content">
+           <div class="text-wrapper">
+               <span class="text">There are three objectives for my next step: 1) design and print the base, 2) test the weaving pattern with single extrusion, single print layer, and 0.8mm nozzle width (or even higher if possible), and 3) test different shapes of the lampshade.</span>
+           </div>
+       </div>
+     </div>
+
+        <div class="section">
+            <div class="section-header">Source file</div>
+            <div class="section-content">
+              <div class="text-wrapper">
+                <a class="see-more" href="a5/a5file.zip">Download GH and printing file↓<br/></a>
+              </div>
+            </div>
+        </div>
+  </div>
+  </body>
+</html>
