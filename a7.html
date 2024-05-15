@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Yubo Zhao's Project Site Assignment 7</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- main section -->
+    <div class="profile-card">
+      <div class="header">
+        <div class="section">
+          <div class="back-text">
+            <a class="see-more" href="index.html">Back to home<br/></a>
+          </div>
+          <div class="header-text">
+              <div class="name">Assignment 7</div>
+              <div class="pronouns">Cast and Mold Part 2</div>
+          </div>
+        </div>
+          
+      </div class="section-wrapper">
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Mold design</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">I didn't stick with my initial idea of casting a sword, as the thickness of sword is too small which could cause problems when casting. Instead, I decided to create a Statue of Goddess from Zelda, which has a much more bulging and volumetric geometry.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="a6/original_model.png">
+            <figcaption>Simplified NURB model of the Status of Goddess</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a6/mold_comp.png">
+            <figcaption>Blue: model(convexity), red: keys, green: base</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">I simplified and converted the mesh to nurb by using <code>ReduceMesh</code> and <code>MeshToNurb</code>. Because of the flat bottom of the statue, I intended to pour the pilaster directly instead of through a sprue. Also because of the overhanging wings, I had to print one half of the mold vertically to be able to break down the supports easily.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="a6/print1.png">
+            <figcaption>Horizontal print</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a6/print2.png">
+            <figcaption>vertical print</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">However, due to a deliver issue I had to reorder my silicone, and it arrived on Tuesday noon. The OOMOO 30 has a 6-hour curing time so it is not ready for pilaster casting yet. I will update the progress once it’s cured and casted.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="a7/printingmolds.jpg">
+            <figcaption>Printed molds (of molds)</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a7/pre_molding.jpg">
+            <figcaption>Taping the removable top panels</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="a7/curing.jpg">
+            <figcaption>Curing</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+          
+
+        <div class="section">
+            <div class="section-header">Source file</div>
+            <div class="section-content">
+              <div class="text-wrapper">
+                <a class="see-more" href="a7/moldfile.zip">Download mold file↓<br/></a>
+              </div>
+            </div>
+        </div>
+  </div>
+  </body>
+</html>
