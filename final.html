@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Yubo Zhao's Project Site Final Project</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- main section -->
+    <div class="profile-card">
+      <div class="header">
+        <div class="section">
+          <div class="back-text">
+            <a class="see-more" href="index.html">Back to home<br/></a>
+          </div>
+          <div class="header-text">
+              <div class="name">Final Project</div>
+              <div class="pronouns">Ambient Machine</div>
+          </div>
+        </div>
+          
+      </div class="section-wrapper">
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Design Concept</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">Ambient Machine is a minimalist white noise generator. It has a physical interface consist of the slider, the wheel button, and the knob. in the form factor of a handheld device. </span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/view3.png">
+            <figcaption>Product rendering</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">In this final project, I will only implement and build the non-electronic or the enclosure design part, and  the goal is to achieve the physical functionality of the interactive components including <code>sliding</code>, <code>spinning</code>, and <code>scrolling</code>.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/view1.jpg">
+            <figcaption>Product detail rendering 1</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/view2.jpg">
+            <figcaption>Product detail rendering 2</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Technique 1: Rhino</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">Before designing in CAD, I sketched out my concept with the consideration of functionality, ergonomics, fabrication feasibility and aesthetics.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/sketch.JPG">
+            <figcaption>Initial sketches</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">After making around 20+ iterations, I decided the final form factor and a fabrication plan.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/iteration.png">
+            <figcaption>Iterations on form factor</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">The enclosure is composed by two types of parts: main chassis and functional components. The main chassis is splitted into front and back parts that can be press fit together. The functional components include two sliders and sliding slots, a wheel and axle, a knob and spinning slot, and a sliding switch and its sliding slot.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/exploded.jpg">
+            <figcaption>Fabrication mechanism (functional parts in red)</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">NOTE: In the concept design, there is a press button on the side designed for lock/power control. However, I found designing a pressing mechanism too complicated in such small-scale product so I decided to not fabricate it as functional part.</span>
+          </div>
+        </div>
+      </div>
+          
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Technique 2: Grasshopper</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">For the wheel, or dial, I decided to use GH to design its “teeth” so I can have more control of its form. The basic idea is to generate the shape convexity and use <code>BooleanDifference</code> to subtract it from the cylinder. In the GH code, there are multiple parameters, such as r for the cylinder radius and the distance between the teeth and the cylinder center, x and y for the teeth shape, n for the teeth count.</span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/gh_process.png">
+            <figcaption>Subtract the cylinders to create the teeth of the wheel</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/gh_dimension.png">
+            <figcaption>Dimensions of the wheel</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/gh_battery.png">
+            <figcaption>GH definition</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Technique 3 & 4: 3D printing + press-fit</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">After testing, I realized that different tolerances should be implemented for different purpose. For instance, moveable parts such as sliders must have a higher tolerance than a press-fit part like the front and back parts. And different press-fit parts also can have different tolerance to achieve permanent or non-permanent assembly. The tolerances for moveable parts are:</span>
+          </div>
+          <div class="text-wrapper">
+            <span class="text">Sliding slot (for sliders and switch, and the knob which is essentially also a sliding mechanism): <code>0.20mm</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/switch_slide_detail.png">
+            <figcaption>Sliding switch detail on the side</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/slider_detail.png">
+            <figcaption>Front slider detail</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/knob_detail.png">
+            <figcaption>Knob detail</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">Wheel and axle: <code>0.50mm</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/wheel_detail.png">
+            <figcaption>Wheel detail</figcaption>
+          </figure>
+          
+          <figure>
+            <img class="content-img" src="final/tolerance_moveable.png">
+            <figcaption>Comparing different tolerances for different mechanism (left: sliding, right: rotating)</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">On the other hand, the press-fit tolerances are:</span>
+          </div>
+          <div class="text-wrapper">
+            <span class="text">Screen panel clip (for permanent assembly, i.e. it is super tight and can’t be disassembled): <code>0.20mm * 0.30mm</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/pressfit_detail1.png">
+            <figcaption>Clip mechanism detail 1</figcaption>
+          </figure>
+          <figure>
+            <img class="content-img" src="final/pressfit_detail2.png">
+            <figcaption>Clip mechanism detail 2</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">I tested the clips and found this tolerance where the male part can be pressed into the female part with some force and they can be locked tightly once assembled.</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/clip_d.png">
+            <figcaption>Clip tolerance (tolerance between male part and female part, left: before insertion, right: inserted)</figcaption>
+          </figure>
+          <div class="text-wrapper">
+            <span class="text">Front and back parts (non-permanent assembly): <code>0.10mm</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/normal_tolerance.png">
+            <figcaption>Front and back part press-fit tolerance</figcaption>
+          </figure>
+
+          <figure>
+            <img class="content-img" src="final/testing.JPG">
+            <figcaption>Tolerance tests</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Technical details</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">The whole chassis has a dimension of <code>131mm * 42mm * 16mm</code></span>
+          </div>
+          <figure>
+            <img class="content-img" src="final/dimension_all.png">
+            <figcaption>Dimension of the enclosure</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Final assembly</div>
+        <div class="section-content">
+            
+          <figure>
+            <img class="content-img" src="final/assembly.JPG">
+            <figcaption>Pieces to assemble</figcaption>
+          </figure>
+          
+          <figure>
+            <img class="content-img" src="final/finalmodel.JPG">
+            <figcaption>Final assembled model</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">Bill of materials</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">I only use one material which is <code>HatchBox White Filament 1.75mm</code></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- section component -->
+      <div class="section">
+        <div class="section-header">3D printing settings</div>
+        <div class="section-content">
+          <div class="text-wrapper">
+            <span class="text">All parts are printed under one setting: <code>0.2mm layer height, 0.42 line width, w/ tree supports</code></span>
+          </div>
+        </div>
+      </div>
+
+        <div class="section">
+            <div class="section-header">Source file</div>
+            <div class="section-content">
+              <div class="text-wrapper">
+                <a class="see-more" href="final/source_file.zip">Download Rhino and GH file↓<br/></a>
+              </div>
+            </div>
+        </div>
+  </div>
+  </body>
+</html>
